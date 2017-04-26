@@ -1,6 +1,14 @@
-let str = 'newming';
-let obj = {age: 555};
+class Father {
+  _render(){
+    throw new Error('子类必须实现')
+  }
+  render(){
+    return(`
+      <ul>
+        ${this._render()}
+      </ul>
+    `)
+  }
+}
 
-export {str, obj};
-// 命名导出
-export default str;
+export default Father;
