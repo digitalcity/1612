@@ -1,40 +1,44 @@
 import React from 'react';
 
-// import Btn from './Btn';
-import Card from './Card';
-import CardArr from './CardArr';
-import Child from './Child';
+import Test from './Test';
 
 class App extends React.Component{
   constructor(){
-    super();
-    this.state={
-      data: [
-        {index: 1, title: 'first', date: '2017.4.30'},
-        {index: 2, title: 'second', date: '2017.5.10'},
-        {index: 3, title: 'third', date: '2017.5.20'},
-        {index: 4, title: 'forth', date: '2017.5.30'}
-      ],
-      num: 0
+    super()
+    console.log('constructor');
+    this.state = {
+      num: 0,
+      destroy: false
     }
   }
+  // componentDidMount(){
+  //   console.log('did mount');
+  // }
+  // componentWillMount(){
+  //   console.log('will mount');
+  // }
+  shouldComponentUpdate(nextProps, nextState){
+    console.log('should update');
+    return nextState.num < 10 ? true : false
+  }
+  // componentWillUpdate(nextProps, nextState){
+  //   console.log('will update');
+  //   console.log(nextProps, nextState);
+  // }
+  // componentDidUpdate(prevProps, prevState){
+  //   console.log('did update');
+  //   console.log(prevProps,prevState);
+  // }
   render(){
+    console.log('render');
     return(
       <div>
-        {/* <Btn title='123' pad={20} bg='blue'/> */}
-        {/* <Card index={23} title='afdasf' date='2014.12.2'/> */}
-        {/* {
-          this.state.data.map( item =>
-            <Card key={item.index} {...item} />
-          )
-        } */}
+        {this.state.num}<br />
+        <button onClick={() => this.setState({num: this.state.num+1}) }>+1</button>
+        <button onClick={() => console.log(this.state)}>show state</button>
 
-        {/* <CardArr data={this.state.data} /> */}
-
-        {/* <Child>
-          <img src='http://www.material-ui.com/images/ok-128.jpg' alt='aa' />
-        </Child> */}
-
+        <button onClick={()=> this.setState({destroy: true})}>销毁test组件</button>
+        {this.state.destroy ? null : <Test num={this.state.num}/>}
 
       </div>
     )
@@ -42,4 +46,23 @@ class App extends React.Component{
 }
 
 export default App;
-// props
+
+// 一： 初始化，首次挂载
+/*
+  constructor
+  componentWillMount
+  render
+  componentDidMount
+*/
+
+// 二： 更新阶段(state,props发生变化时)
+/*
+  componentWillReceiveProps(nextProps) -> 父级传入的props发生变化，而且必须是父级的state控制的props发生变化
+  shouldComponentUpdate(nextProps,nextState) -> 必须返回一个布尔值
+  componentWillUpdate(nextProps,nextState)
+  render
+  componentDidUpdate(prevProps,prevState)
+*/
+
+// 三： 销毁
+// componentWillUnmount()
