@@ -56,7 +56,9 @@ class Home extends React.Component{
           this.state.data.length===0? '加载中。。。。' :
             this.state.data.map( item =>
               <div key={item.id}>
-                <img src={item.author.avatar_url} alt='avatar' style={{width:'30px',height:'30px'}}/>
+                <Link to={`/user/${item.author.loginname}`}>
+                  <img src={item.author.avatar_url} alt='avatar' style={{width:'30px',height:'30px'}}/>
+                </Link>
                 <span>{item.reply_count}/{item.visit_count}</span>
                 <button>{item.top? '置顶' : item.good ? '精华': obj[item.tab]}</button>
                 <Link to={`/topic/${item.id}`} >{item.title}</Link>

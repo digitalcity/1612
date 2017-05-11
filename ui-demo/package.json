@@ -1,14 +1,10 @@
 {
-  "name": "react-router-demo",
+  "name": "ui-demo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.16.1",
-    "moment": "^2.18.1",
     "react": "^15.5.4",
-    "react-addons-css-transition-group": "^15.5.2",
-    "react-dom": "^15.5.4",
-    "react-router-dom": "^4.1.1"
+    "react-dom": "^15.5.4"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"

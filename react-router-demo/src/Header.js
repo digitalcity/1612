@@ -20,7 +20,7 @@ class Header extends React.Component{
   render(){
     return(
       <div style={{overflow: 'hidden'}}>
-        <h1 style={{float: 'left',margin: '0'}}>cnode 中文社区</h1>
+        <h1 style={{float: 'left',margin: '0'}}><Link to='/'>cnode 中文社区</Link></h1>
         {
           this.state.login ? <p style={{float: 'right'}}>欢迎您：<Link to={`/user/${this.state.user.loginname}`}>{this.state.user.loginname}</Link></p> :
           <div style={{float: 'right'}}>
