@@ -3,6 +3,8 @@ import React from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 const FormItem = Form.Item;
 
+import img from './avater.jpg';
+
 class App extends React.Component{
   componentDidMount(){
 
@@ -11,7 +13,8 @@ class App extends React.Component{
     console.log(this.props.form);
     return(
       <div>
-
+        aaa
+        <img src={img}/>
       </div>
     )
   }

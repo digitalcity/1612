@@ -65,6 +65,7 @@ module.exports = {
     filename: 'static/js/[name].[chunkhash:8].js',
     chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
     // We inferred the "public path" (such as / or /my-project) from homepage.
+    // 以前是 publicPath，现在为了生成静态文件是可以双击html打开，改为了相对路径
     publicPath: './'
   },
   resolve: {

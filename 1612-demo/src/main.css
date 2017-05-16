@@ -1,0 +1,41 @@
+body{
+  /*font-size: 14px;*/
+}
+.my-wrap{
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+header,footer{
+  height: 80px;
+  background-color: #00bcd4;
+  flex-shrink: 0;
+  display: flex;
+}
+header{
+  justify-content: space-between;
+  padding: 0 10px;
+  align-items: center;
+  font-size: 18px;
+  color: #fff;
+}
+footer{
+  align-items: center;
+  text-align: center;
+}
+footer a{
+  flex-basis: 25%;
+  font-size: 18px;
+  border-right: 1px solid #eee;
+  color: #fff;
+}
+footer a:hover{
+  color: deeppink;
+}
+footer a:last-child{
+  border-right: none;
+}
+.main{
+  flex-grow: 1;
+  overflow-y: auto;
+}
