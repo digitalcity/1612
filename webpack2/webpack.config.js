@@ -10,8 +10,8 @@ module.exports = {
     filename: "bundle.[hash:5].js",
     publicPath: 'build/'
   },
-  watch: true,
-  devtool: "source-map",
+  // watch: true,
+  // devtool: "source-map",
   module: {
     rules: [
       { test: /\.js$/, exclude: /node_modules/, use: "babel-loader" },
@@ -28,7 +28,14 @@ module.exports = {
           use: ["postcss-loader", 'less-loader']
         })
       },
-      { test: /\.(jpe?g|png)$/, use: 'file-loader' }
+      { test: /\.(jpe?g|png)$/, use: 'file-loader' },
+      {
+        test: require.resolve('jquery'),
+        use: [{
+          loader: 'expose-loader',
+          options: '$'
+        }]
+      }
     ]
   },
   plugins: [

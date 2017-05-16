@@ -4,7 +4,8 @@
   "description": "just a webpack config demo",
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/.bin/webpack"
+    "build": "rimraf build && ./node_modules/.bin/webpack",
+    "start": "./node_modules/.bin/webpack-dev-server --config webpack.dev.config.js"
   },
   "author": "newming",
   "license": "MIT",
@@ -16,16 +17,21 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.1",
     "cssnano": "^3.10.0",
+    "expose-loader": "^0.7.3",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.28.0",
     "less": "^2.7.2",
     "less-loader": "^4.0.3",
+    "open-browser-webpack-plugin": "0.0.5",
     "postcss-loader": "^2.0.5",
+    "rimraf": "^2.6.1",
     "style-loader": "^0.17.0",
-    "webpack": "^2.5.1"
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "jquery": "^3.2.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   }

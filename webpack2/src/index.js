@@ -7,7 +7,7 @@ import './main.less';
 
 ReactDOM.render(
   <div className='box'>
-    <p>hello</p>
-    <img src={img}/>
+    <p>hello11</p>
+    <img src={img} />
   </div>
   ,document.getElementById('root'))
