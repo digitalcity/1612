@@ -30,7 +30,7 @@ footer a{
   color: #fff;
 }
 footer a:hover{
-  color: deeppink;
+  color: #F44336;
 }
 footer a:last-child{
   border-right: none;
@@ -38,4 +38,23 @@ footer a:last-child{
 .main{
   flex-grow: 1;
   overflow-y: auto;
+  display: flex;
+}
+.main>div{
+  flex-grow: 1;
+}
+.home-wrap{
+  display: flex;
+  align-items: center;
+  background-image: url(./images/bg1.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  color: #fff;
+}
+.home-wrap>div{
+  margin: 0 auto;
+  text-align: center;
+}
+#post pre{
+  overflow-x: auto;
 }

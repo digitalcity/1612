@@ -1,23 +1,33 @@
 import React from 'react';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import Home from './components/Home';
+import Blog from './components/Blog';
+import Work from './components/Work';
+import About from './components/About';
+import Post from './components/Post';
+
 class App extends React.Component{
   render(){
     return(
-      <div className='my-wrap'>
-        <Header />
+      <BrowserRouter>
+        <div className='my-wrap'>
+          <Header />
 
-        <div className='main'>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <div className='main'>
+            <Route exact path='/' component={Home}/>
+            <Route path='/blog' component={Blog}/>
+            <Route path='/work' component={Work}/>
+            <Route path='/about' component={About}/>
+            <Route path='/post/:title' component={Post}/>
+          </div>
+
+          <Footer />
         </div>
-
-        <Footer />
-      </div>
+      </BrowserRouter>
     )
   }
 }
