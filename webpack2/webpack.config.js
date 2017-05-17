@@ -7,8 +7,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "bundle.[hash:5].js",
-    publicPath: 'build/'
+    filename: "bundle.js",
   },
   // watch: true,
   // devtool: "source-map",
@@ -19,7 +18,7 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: "postcss-loader"
+          use: ['css-loader', "postcss-loader"]
         })
       },
       { test: /\.less$/,
@@ -41,13 +40,21 @@ module.exports = {
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false,
-        drop_console: false
+        screw_ie8: true, // React doesn't support IE8
+        warnings: false
+      },
+      mangle: {
+        screw_ie8: true
+      },
+      output: {
+        comments: false,
+        screw_ie8: true
       }
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV':  '"production"'
     }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new ExtractTextPlugin("styles.css"),
     new HtmlWebpackPlugin({
       template: 'templete/index.html',

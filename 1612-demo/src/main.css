@@ -6,6 +6,11 @@ body{
   height: 100vh;
   flex-direction: column;
 }
+@media (min-width: 700px) {
+  .my-wrap{
+    flex-direction: row;
+  }
+}
 header,footer{
   height: 80px;
   background-color: #00bcd4;
@@ -46,7 +51,7 @@ footer a:last-child{
 .home-wrap{
   display: flex;
   align-items: center;
-  background-image: url(./images/bg1.jpg);
+  background-image: url(https://newming.github.io/duopingshidai/dist/2d1805607652dacc63067ef415e6a272.jpg);
   background-size: cover;
   background-position: 50% 50%;
   color: #fff;
@@ -57,4 +62,8 @@ footer a:last-child{
 }
 #post pre{
   overflow-x: auto;
+}
+.left-nav{
+  width: 260px;
+  background-color: #00bcd4;
 }
